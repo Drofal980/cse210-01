@@ -28,3 +28,4 @@ def display_Chart(chart_data):
 #INITIALIZES MAIN
 if __name__ == "__main__":
   main() 
+  
