@@ -15,6 +15,15 @@ def main():
     pass
 
 #OTHER FUNCTIONS
+def display_Chart(chart_data):
+    """Displays a Tic-Tac-Toe Chart in the terminal
+
+    Parameters
+        chart_data: List containing chart data
+
+    """
+
+    pass
 
 #INITIALIZES MAIN
 if __name__ == "__main__":
