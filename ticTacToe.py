@@ -7,7 +7,8 @@ CHART_DATA = [1,2,3,4,5,6,7,8,9]
 
 #MAIN FUNCTION
 def main():
-    """[Function purpose here]
+    """Calls the functions needed to play a game of 
+    Tic-Tac-Toe
     """
     try:
         global PLAYERS
@@ -50,13 +51,17 @@ def main():
         print("Good game. Thanks for playing!")
         quit()
                 
-
-    except ValueError as val_err:
+    except Exception() as val_err:
          #  This code will be executed if the user enters
         #  an invalid integer for the position in the chart
         print("ERROR: Please enter a valid position")
         print()
-
+        
+    except Exception as excep:
+        #  This code will be executed if some
+        #  other type of exception occurs.
+        print("ERROR: Run the program again")
+    
 #OTHER FUNCTIONS
 def display_Chart(cd):
     """Displays a Tic-Tac-Toe Chart in the terminal
@@ -99,7 +104,7 @@ def if_game_finished():
     been met
 
     Return:
-        chart
+        Bool game_finished
     """
     game_finished = False
 
@@ -132,12 +137,15 @@ def if_game_finished():
         # diagonal 2
         if CHART_DATA[2] == player and CHART_DATA[4] == player and CHART_DATA[6] == player:
             game_finished = True
-
     #Checks if each position is filled
+    #counter
     num_pos_filled = 0
+    #For ever square
     for pos in CHART_DATA:
+        #If data was entered
         if type(pos) == str:
             num_pos_filled += 1
+    #if count was equal or higher than spots avaliable
     if num_pos_filled >= len(CHART_DATA):
         game_finished = True
 
