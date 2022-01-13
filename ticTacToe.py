@@ -103,6 +103,36 @@ def if_game_finished():
     """
     game_finished = False
 
+    #Checks for each player
+    for player in PLAYERS:
+        #Checks 
+        # row 1
+        if CHART_DATA[0] == player and CHART_DATA[1] == player and CHART_DATA[2] == player:
+            game_finished = True
+        # row 2
+        if CHART_DATA[3] == player and CHART_DATA[4] == player and CHART_DATA[5] == player:
+            game_finished = True
+        # row 3
+        if CHART_DATA[6] == player and CHART_DATA[7] == player and CHART_DATA[8] == player:
+            game_finished = True
+
+        # column 1
+        if CHART_DATA[0] == player and CHART_DATA[3] == player and CHART_DATA[6] == player:
+            game_finished = True
+        # column 2
+        if CHART_DATA[1] == player and CHART_DATA[4] == player and CHART_DATA[7] == player:
+            game_finished = True
+        # column 3
+        if CHART_DATA[2] == player and CHART_DATA[5] == player and CHART_DATA[8] == player:
+            game_finished = True
+        
+        # diagonal 1
+        if CHART_DATA[0] == player and CHART_DATA[4] == player and CHART_DATA[8] == player:
+            game_finished = True
+        # diagonal 2
+        if CHART_DATA[2] == player and CHART_DATA[4] == player and CHART_DATA[6] == player:
+            game_finished = True
+
     #Checks if each position is filled
     num_pos_filled = 0
     for pos in CHART_DATA:
