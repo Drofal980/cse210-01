@@ -50,12 +50,6 @@ def main():
         #End game message
         print("Good game. Thanks for playing!")
         return 0
-                
-    except Exception() as val_err:
-         #  This code will be executed if the user enters
-        #  an invalid integer for the position in the chart
-        print("ERROR: Please enter a valid position")
-        print()
         
     except Exception as excep:
         #  This code will be executed if some
