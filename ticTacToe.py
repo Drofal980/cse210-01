@@ -36,18 +36,27 @@ def main():
                     #Prints chart to terminal
                     display_Chart(CHART_DATA)
 
-                    #Gets current players choice, -1 to account for 0
-                    square_choice = get_choice(player)-1
+                    bool_square = True
+                    
+                    while(bool_square):
+                        try:
+                            #Gets current players choice, -1 to account for 0
+                            square_choice = int(input(f"{player}'s turn to choose a square (1-9): "))-1
+                            if -1 < square_choice < 9 and type(CHART_DATA[square_choice]) == int:
+                                bool_square = False
+                            else:
+                                print("Please enter a valid square")
 
-                    #Checks and reprompts if position is filled
-                    while(type(CHART_DATA[square_choice]) != int):
-                        print("Position is filled, Please pick another square")
-                        square_choice = get_choice(player)-1
+                        except Exception as excep:
+                            #  This code will be executed if some
+                            #  other type of exception occurs.
+                            print("Please enter a valid square")
 
                     #Changes chart
                     CHART_DATA = change_chart(square_choice, player, CHART_DATA)
         
         #End game message
+        display_Chart(CHART_DATA)
         print("Good game. Thanks for playing!")
         return 0
         
@@ -69,16 +78,6 @@ def display_Chart(cd):
     print('-+-+-')
     print(f'{cd[6]}|{cd[7]}|{cd[8]}')
     print()
-
-def get_choice(player):
-    """Gets a players choice of square
-
-    Parameters
-        player: Char representing player
-
-    """
-    choice = int(input(f"{player}'s turn to choose a square (1-9): "))
-    return choice
 
 def change_chart(square, player, chart):
     """Changes position in list to players name
