@@ -31,7 +31,7 @@ def main():
                     #End game message
                     display_Chart(CHART_DATA)
                     print("Good game. Thanks for playing!")
-                    quit()
+                    return 0
                 else:
                     #Prints chart to terminal
                     display_Chart(CHART_DATA)
@@ -49,7 +49,7 @@ def main():
         
         #End game message
         print("Good game. Thanks for playing!")
-        quit()
+        return 0
                 
     except Exception() as val_err:
          #  This code will be executed if the user enters
