@@ -1,3 +1,8 @@
+'''
+Tic-Tac-Toe: The Game
+Author: Brandon Van Blarcum
+'''
+
 #IMPORTS
 import random
 
